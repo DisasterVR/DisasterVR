@@ -3,6 +3,7 @@ using System.Collections;
 using trinus;
 
 public class SampleIntegratedUI : MonoBehaviour {
+	
 	enum STATE {
 		INIT, GAME, PAUSE, TRINUS_SETTINGS
 	}
