@@ -7,7 +7,7 @@ using System.Reflection;
 namespace trinus{
 	public class TrinusCamera : MonoBehaviour
 	{
-		public enum CAMERA_MODE{
+		public enum CAMERA_MODE {
 			DISABLED,
 			SINGLE,
 			DUAL,
