@@ -23,9 +23,9 @@ public class BodyTracking : MonoBehaviour
 
         for (int i = 0; i < 33; i++)
         {
-            float x = float.Parse(points[i * 3]) / 100;
+            float x = float.Parse(points[i * 3]) / 95;
             float y = float.Parse(points[i * 3 + 1]) / 100;
-            float z = float.Parse(points[i * 3 + 2]) / 600;
+            float z = float.Parse(points[i * 3 + 2]) / 650;
             body[i].transform.localPosition = new Vector3(x, y, z);
         }
     }
