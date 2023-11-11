@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
 
-        tmpName.text = mainMenuLogic.Instance.userName;
+        //tmpName.text = mainMenuLogic.Instance.userName;
 
     }
 

@@ -6,23 +6,23 @@ using System.IO;
 
 public class PythonManager : MonoBehaviour
 {
-    private const string PythonAppName = "python/3DBodyTracking.exe"; // Ruta relativa dentro de StreamingAssets
+    //private const string PythonAppName = "python/3DBodyTracking.exe"; // Ruta relativa dentro de StreamingAssets
    
-    private static Process PythonProcess;
+    //private static Process PythonProcess;
    
-    [RuntimeInitializeOnLoadMethod]
-    private static void RunOnStart()
-    {
-        UnityEngine.Debug.Log(Application.dataPath + PythonAppName);
+    //[RuntimeInitializeOnLoadMethod]
+    //private static void RunOnStart()
+    //{
+    //    UnityEngine.Debug.Log(Application.dataPath + PythonAppName);
 
-        ProcessStartInfo PythonInfo = new ProcessStartInfo();
-        PythonInfo.FileName = Application.dataPath + PythonAppName;
-        PythonInfo.WindowStyle = ProcessWindowStyle.Hidden;
-        PythonInfo.CreateNoWindow = true;
+    //    ProcessStartInfo PythonInfo = new ProcessStartInfo();
+    //    PythonInfo.FileName = Application.dataPath + PythonAppName;
+    //    PythonInfo.WindowStyle = ProcessWindowStyle.Hidden;
+    //    PythonInfo.CreateNoWindow = true;
 
-        PythonProcess = Process.Start(PythonInfo);
+    //    PythonProcess = Process.Start(PythonInfo);
 
-        Application.quitting += () =>
-            { if (!PythonProcess.HasExited) PythonProcess.Kill(); };
-    }
+    //    Application.quitting += () =>
+    //        { if (!PythonProcess.HasExited) PythonProcess.Kill(); };
+    //}
 }
