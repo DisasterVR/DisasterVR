@@ -10,9 +10,19 @@ public class BodyTracking1 : MonoBehaviour
     public GameObject[] body;
     private List<string> _lines;
     public static bool isCollision;
+
+    private float x_old = 0;
+    private float y_old = 0;
+    private float z_old = 0;
+
+    private float x_new = 0;
+    private float y_new = 0;
+    private float z_new = 0;
     void Start()
     {
-        
+        x_old = transform.position.x;
+        y_old = transform.position.y;
+        z_old = transform.position.z;
     }
 
     // Update is called once per frame
@@ -31,15 +41,21 @@ public class BodyTracking1 : MonoBehaviour
 
         for (int i = 0; i < 33; i++)
         {
-            float x = float.Parse(points[i * 3]) / 110;
+            float x = float.Parse(points[i * 3]) / 210; //110
             float y = float.Parse(points[i * 3 + 1]) / 110;
             float z = float.Parse(points[i * 3 + 2]) / 650;
+
+            x_new = x;
+
+            float differenceX = x_new - x_old;
 
             //UDP 1
             //float x1 = float.Parse(points1[i * 3]) / 110;
             //float y1 = float.Parse(points1[i * 3 + 1]) / 110;
             //float z1 = float.Parse(points1[i * 3 + 2]) / 650;
             body[i].transform.localPosition = new Vector3(x, 0, body[i].transform.localPosition.z);
+
+            x_old = x_new;
         }
     }
 }

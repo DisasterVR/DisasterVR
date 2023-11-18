@@ -50,14 +50,14 @@ public class mainMenuLogic : MonoBehaviour
 
     public void LoadSimulationEarthquake()
     {
-        SceneManager.LoadScene("Earthquake");
+        SceneManager.LoadScene("Room_v2");
     }
 
     public void LoadTest()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Earthquake");
+            SceneManager.LoadScene("Room_v2");
         }
     }
 
