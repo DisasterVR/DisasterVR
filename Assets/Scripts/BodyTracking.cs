@@ -8,6 +8,7 @@ public class BodyTracking : MonoBehaviour
     public UDPReceive updReceive;
     public GameObject[] body;
     private List<string> _lines;
+    private short cont = 0;
     void Start()
     {
         
@@ -20,13 +21,27 @@ public class BodyTracking : MonoBehaviour
         print(data);
         data = data.Replace("[", "").Replace("]","");
         string[] points = data.Split(',');
-
-        for (int i = 0; i < 33; i++)
+        
+        if (cont <= 3)
         {
-            float x = float.Parse(points[i * 3]) / 95;
-            float y = float.Parse(points[i * 3 + 1]) / 100;
-            float z = float.Parse(points[i * 3 + 2]) / 650;
-            body[i].transform.localPosition = new Vector3(x, y, z);
+            for (int i = 0; i < 33; i++)
+            {
+                float x = float.Parse(points[i * 3]) / 95;
+                float y = float.Parse(points[i * 3 + 1]) / 100;
+                float z = float.Parse(points[i * 3 + 2]) / 650;
+                body[i].transform.localPosition = new Vector3(x, y, z);
+            }
+            cont++;
+        }
+        else
+        {
+            for (int i = 0; i < 33; i++)
+            {
+                float x = float.Parse(points[i * 3]) / 500;
+                float y = float.Parse(points[i * 3 + 1]) / 400;
+                float z = float.Parse(points[i * 3 + 2]) / 800;
+                body[i].transform.localPosition = new Vector3(body[i].transform.localPosition.x + x, body[i].transform.localPosition.y + y, body[i].transform.localPosition.z + z);
+            }
         }
     }
 }

@@ -180,8 +180,14 @@ namespace Valve.VR.InteractionSystem
                 {
                     for (int i = 0; i < hmdTransforms.Length; i++)
                     {
-                        if (hmdTransforms[i].gameObject.activeInHierarchy)
-                            return hmdTransforms[i];
+	                    if (hmdTransforms[i].gameObject.activeInHierarchy)
+	                    {
+		                    //hmdTransforms[i].transform.position = new Vector3(0.1f, 0.2f, 0.1f);
+		                    Debug.Log("Eje X: " + hmdTransforms[i].transform.position.x);
+		                    Debug.Log("Eje Y: " + hmdTransforms[i].transform.position.y);
+		                    Debug.Log("Eje Z: " + hmdTransforms[i].transform.position.z);
+		                    return hmdTransforms[i];
+	                    }
                     }
                 }
 				return null;

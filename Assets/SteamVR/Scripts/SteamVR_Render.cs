@@ -286,9 +286,9 @@ namespace Valve.VR
             if (screenshotType == EVRScreenshotType.StereoPanorama)
             {
                 string previewFilename = GetScreenshotFilename(screenshotHandle, EVRScreenshotPropertyFilenames.Preview);
-                string VRFilename = GetScreenshotFilename(screenshotHandle, EVRScreenshotPropertyFilenames.VR);
+                string fVRFilename = GetScreenshotFilename(screenshotHandle, EVRScreenshotPropertyFilenames.VR);
 
-                if (previewFilename == null || VRFilename == null)
+                if (previewFilename == null || fVRFilename == null)
                     return;
 
                 // Do the stereo panorama screenshot
@@ -297,10 +297,10 @@ namespace Valve.VR
                 screenshotPosition.transform.position = SteamVR_Render.Top().transform.position;
                 screenshotPosition.transform.rotation = SteamVR_Render.Top().transform.rotation;
                 screenshotPosition.transform.localScale = SteamVR_Render.Top().transform.lossyScale;
-                SteamVR_Utils.TakeStereoScreenshot(screenshotHandle, screenshotPosition, 32, 0.064f, ref previewFilename, ref VRFilename);
+                SteamVR_Utils.TakeStereoScreenshot(screenshotHandle, screenshotPosition, 32, 0.064f, ref previewFilename, ref fVRFilename);
 
                 // and submit it
-                OpenVR.Screenshots.SubmitScreenshot(screenshotHandle, screenshotType, previewFilename, VRFilename);
+                OpenVR.Screenshots.SubmitScreenshot(screenshotHandle, screenshotType, previewFilename, fVRFilename);
             }
         }
 

@@ -37,7 +37,7 @@
     },
     {
       "name": "/actions/default/in/HeadsetOnHead",
-      "type": "boolean",
+      "type": "vector3",
       "requirement": "optional"
     },
     {

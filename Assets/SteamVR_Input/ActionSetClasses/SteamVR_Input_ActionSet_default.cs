@@ -81,7 +81,7 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean HeadsetOnHead
+        public virtual SteamVR_Action_Vector3 HeadsetOnHead
         {
             get
             {
